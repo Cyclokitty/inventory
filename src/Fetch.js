@@ -12,7 +12,7 @@ class Fetch extends Component {
     };
   }
 
-  callApi() {
+  callApi =() => {
     fetch(process.env.REACT_APP_URL)
       .then(res => res.text())
       .then(res => this.setState({apiResponse: JSON.parse(res)}))
@@ -25,7 +25,7 @@ class Fetch extends Component {
     .catch(err => err);
   }
 
-  getUniqueTags(data) {
+  getUniqueTags = (data) => {
     let productCategories = new Set();
     this.state.data.map(thing => {
     let breakDown = thing.tags.split(',');
