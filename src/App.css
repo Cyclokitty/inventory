@@ -1,33 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Open+Sans');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.App-footer {
+  min-height: 10vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #0066cc;
+  font-size: calc(10px + 2vmin);
+  font-family: 'Lilita One', cursive;
+  border-top: 1px solid  #1aa3a3;
+  color: #e59116;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #0066cc;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid  #1aa3a3;
+  font-size: calc(15px + 2vmin);
+  font-family: 'Lilita One', cursive;
+  color: #e59116;
+}
+
+.centerContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Open Sans';
 }
 
-.App-link {
-  color: #61dafb;
+.tags {
+  width: 75vh;
+  margin: 10px;
+  padding: 30px;
+  background: #0066cc;
+  color: #d2d2d2;
+  font-size: 1.5em;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  color: #e59116;
+  font-size: 2em;
 }
