@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import './App.css';
 
 class Fetch extends Component {
@@ -38,7 +40,6 @@ class Fetch extends Component {
     return productItems;
 }
 
-
   componentDidMount() {
     this.callApi();
   }
@@ -47,13 +48,18 @@ class Fetch extends Component {
 
 
     return (
-      <div className='centerContainer'>
-        <h4 className='title'>Store Inventory: Tags</h4>
+      <div>
+        <Header />
+        <div className='centerContainer'>
+          <h4 className='title'>Store Inventory: Tags</h4>
 
-          {this.state.tags.map((item, index) =>
-           <h5 className='tags' key={index}>{item}</h5>)}
+            {this.state.tags.map((item, index) =>
+             <h5 className='tags' key={index}>{item}</h5>)}
 
+        </div>
+        <Footer date={this.props.date}/>
       </div>
+
     )
   }
 }
