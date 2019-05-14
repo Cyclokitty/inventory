@@ -57,7 +57,7 @@ class Fetch extends Component {
              <h5 className='tags' key={index}>{item}</h5>)}
 
         </div>
-        <Footer date={this.props.date}/>
+        <Footer />
       </div>
 
     )
