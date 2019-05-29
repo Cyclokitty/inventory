@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link, withRouter} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
@@ -14,7 +15,7 @@ class Fetch extends Component {
     };
   }
 
-  callApi =() => {
+  callApi(){
     fetch(process.env.REACT_APP_URL)
       .then(res => res.text())
       .then(res => this.setState({apiResponse: JSON.parse(res)}))
@@ -27,7 +28,7 @@ class Fetch extends Component {
     .catch(err => err);
   }
 
-  getUniqueTags = (data) => {
+  getUniqueTags(data){
     let productCategories = new Set();
     this.state.data.map(thing => {
     let breakDown = thing.tags.split(',');
@@ -42,10 +43,21 @@ class Fetch extends Component {
 
   componentDidMount() {
     this.callApi();
+
   }
 
   render() {
-
+    const tagNode = this.state.tags.map((item, index) => {
+      return (
+        <div key={index}>
+          <Link
+            to={{pathname: `/${item}`, data: this.state.data}}
+            key={index}>
+            <h5 className='tags'>{item}</h5>
+          </Link>
+        </div>
+      )
+    });
 
     return (
       <div>
@@ -53,8 +65,7 @@ class Fetch extends Component {
         <div className='centerContainer'>
           <h4 className='title'>Store Inventory: Tags</h4>
 
-            {this.state.tags.map((item, index) =>
-             <h5 className='tags' key={index}>{item}</h5>)}
+          {tagNode}
 
         </div>
         <Footer />
@@ -66,4 +77,4 @@ class Fetch extends Component {
 
 
 
-export default Fetch;
+export default withRouter(Fetch);
