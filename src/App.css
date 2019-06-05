@@ -31,6 +31,14 @@
   color: #e59116;
 }
 
+.cardItems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .centerContainer {
   display: flex;
   flex-direction: column;
@@ -39,8 +47,29 @@
   font-family: 'Open Sans';
 }
 
+.items {
+  margin: 0;
+  padding: 30px;
+  color: #333333;
+  text-align: center;
+}
+
+.items:hover {
+  border: 1px solid #333333;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.row_cell {
+  flex: 1;
+  margin: 5px;
+}
+
 .tags {
-  width: 75vh;
+  width: 50vw;
   margin: 10px;
   padding: 30px;
   background: #0066cc;
@@ -51,5 +80,5 @@
 
 .title {
   color: #e59116;
-  font-size: 2em;
+  font-size: 2.0em;
 }
